@@ -6,38 +6,38 @@ Current phase: Phase 3 — Public Website
 
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
+TASK-002 — Project Shell + Navigation (status: review, awaiting approval)
 
 Current task:
-TASK-002 — Project Shell + Navigation — status: review
+TASK-003 — Hero + About — status: review
 
 Implementation status:
-TASK-002 navigation shell verified and complete. Implementation from previous session confirmed:
-- Responsive SiteHeader component (mobile/tablet/desktop)
-- MobileNav full-screen menu with accessibility
-- Nav links configuration for future sections
-- All TASK-002 acceptance criteria met
+TASK-003 Hero and About sections implemented:
+- Hero section with H1, subheadline, and primary CTA
+- Hero mobile min-height: 100svh; desktop: 600px
+- Hero content anchored bottom with 32px padding
+- About section with 3:4 portrait placeholder and biography placeholder
+- Mobile: About stacks image above text
+- Desktop: About two-column layout with text vertically centered
+- Typography follows design system (serif headings, sans body)
+- No invented business content; polished placeholders used
 
-Accessibility remediation (current session):
-- Added lightweight focus trap to MobileNav dialog
-- Tab cycles focus within dialog (last to first)
-- Shift+Tab cycles focus within dialog (first to last)
-- Escape continues to close menu
-- Focus returns to menu trigger on close
-- Filters disabled/hidden elements from focusable set
-
-Files changed during TASK-002 verification + remediation:
-- src/components/layout/mobile-nav.tsx
+Files changed during TASK-003:
+- src/components/sections/hero.tsx
+- src/components/sections/about.tsx
+- src/app/page.tsx
 - .docs/AGENT_CONTEXT.md
+- .docs/TASKS.md
 - .docs/DECISIONS.md
 
-Verification (TASK-002):
+Verification (TASK-003):
 - `npm run typecheck` — pass
 - `npm run build` — pass
-- Responsive behavior verified against DESIGN_SYSTEM.md
-- Focus trap implemented per accessibility requirements
+- Responsive behavior follows DESIGN_SYSTEM.md
+- Placeholder strategy respects content integrity constraints
 
 Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-002 (and TASK-001 if not yet approved), then TASK-003 (Hero + About). Do not start TASK-003 until TASK-002 is approved.
+Reviewer approval of TASK-003, then TASK-004 (Services). Do not start TASK-004 until TASK-003 is approved.

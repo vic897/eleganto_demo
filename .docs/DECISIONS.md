@@ -55,3 +55,12 @@ Dashboard data and enquiry states are local/mock state.
 - **Accessibility:** Menu button uses `aria-expanded`, `aria-controls`, 44×44px targets; full-screen menu closes on Escape and link selection; focus returns to the menu trigger on close; closed menu uses `hidden` and `pointer-events-none` with `tabIndex={-1}` on links.
 - **Focus trap remediation:** Added lightweight focus trap to `MobileNav` dialog without external dependencies. Tab cycles focus within dialog (last to first), Shift+Tab cycles (first to last). Filters disabled/hidden elements from focusable set. Escape continues to close menu.
 - **Verification:** Implementation verified in Windsurf session; `npm run typecheck` and `npm run build` pass; responsive behavior confirmed against DESIGN_SYSTEM.md requirements.
+
+### TASK-003 — Hero + About (Phase 3)
+- **Component structure:** Modular section components in `src/components/sections/` (hero.tsx, about.tsx).
+- **Hero implementation:** Full-width section with H1 ("Luxury Makeup Artistry"), subheadline placeholder, and primary CTA linking to `/#book`. Mobile min-height: 100svh; desktop: 600px. Content anchored bottom with 32px padding. Uses `--surface-elevated` background as deliberate placeholder for future hero imagery.
+- **About implementation:** Section with id="about" for hash navigation. 3:4 aspect ratio portrait placeholder using `--surface-elevated` background with subdued User icon. Biography placeholder copy explicitly states verified content is pending. Mobile: stacked layout (image top, text bottom); desktop: two-column layout with text vertically centered against image.
+- **Placeholder strategy:** No invented business content. Hero uses neutral background placeholder. About uses deliberate media placeholder with icon. Copy clearly communicates that verified artist biography and credentials will be added.
+- **Typography:** Playfair Display for headings (H1, H2), Inter for body text. Follows design system typography roles.
+- **Responsive behavior:** Mobile-first implementation (375px primary). Tablet (768px) and desktop (1024px+) breakpoints follow DESIGN_SYSTEM.md spacing and layout rules.
+- **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-004+ functionality added.

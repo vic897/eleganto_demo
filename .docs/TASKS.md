@@ -41,7 +41,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - Interactive controls meet minimum 44×44px touch targets on mobile.
   - `npm run build` succeeds; no new TypeScript errors.
 
-- [ ] TASK-003 | S | depends: TASK-002 | status: todo
+- [ ] TASK-003 | S | depends: TASK-002 | status: review
   Title: Hero + About
 
   Acceptance:
