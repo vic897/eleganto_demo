@@ -2,44 +2,42 @@
 
 Active branch: task-001-init-architecture
 
-Current phase: Phase 2 — Project Architecture
+Current phase: Phase 3 — Public Website
 
 Last completed:
-None
+TASK-001 — Project Architecture (status: review, awaiting approval)
 
 Current task:
-TASK-001 — status: review
+TASK-002 — Project Shell + Navigation — status: review
 
 Implementation status:
-TASK-001 implementation and post-review remediation are complete. The branch is awaiting final reviewer approval before TASK-001 may be marked done.
+TASK-002 navigation shell verified and complete. Implementation from previous session confirmed:
+- Responsive SiteHeader component (mobile/tablet/desktop)
+- MobileNav full-screen menu with accessibility
+- Nav links configuration for future sections
+- All TASK-002 acceptance criteria met
 
-Files changed during TASK-001 (implementation + remediation):
-- package.json
-- package-lock.json
-- tsconfig.json
-- next.config.ts
-- next-env.d.ts
-- eslint.config.mjs
-- postcss.config.mjs
-- components.json
-- .gitignore
-- src/app/layout.tsx
-- src/app/page.tsx
-- src/app/globals.css
-- src/lib/utils.ts
-- src/components/ui/button.tsx
-- src/components/layout/app-shell.tsx
-- src/components/layout/site-header.tsx
-- src/components/layout/site-footer.tsx
-- src/types/ (domain models)
-- src/data/mock/ (local mock data)
+Accessibility remediation (current session):
+- Added lightweight focus trap to MobileNav dialog
+- Tab cycles focus within dialog (last to first)
+- Shift+Tab cycles focus within dialog (first to last)
+- Escape continues to close menu
+- Focus returns to menu trigger on close
+- Filters disabled/hidden elements from focusable set
 
-Verification (TASK-001):
+Files changed during TASK-002 verification + remediation:
+- src/components/layout/mobile-nav.tsx
+- .docs/AGENT_CONTEXT.md
+- .docs/DECISIONS.md
+
+Verification (TASK-002):
 - `npm run typecheck` — pass
 - `npm run build` — pass
+- Responsive behavior verified against DESIGN_SYSTEM.md
+- Focus trap implemented per accessibility requirements
 
 Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-001, then TASK-002 (Project Shell + Navigation). Do not start TASK-002 until TASK-001 is approved.
+Reviewer approval of TASK-002 (and TASK-001 if not yet approved), then TASK-003 (Hero + About). Do not start TASK-003 until TASK-002 is approved.

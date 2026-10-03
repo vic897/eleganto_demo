@@ -47,3 +47,11 @@ Dashboard data and enquiry states are local/mock state.
 - **shadcn CLI:** `shadcn` is a devDependency only—not a runtime dependency.
 - **`@base-ui/react`:** Retained as a runtime dependency because the shadcn Button primitive imports `@base-ui/react/button` directly.
 - **Scope guard:** No Phase 3+ functionality (marketing sections, booking UI, dashboard UI) was introduced in TASK-001.
+
+### TASK-002 — Navigation shell (Phase 3)
+- **Component split:** `SiteHeader` (responsive bar) + `MobileNav` (full-screen menu below `lg` / 1024px); shared link targets in `src/lib/nav-links.ts`.
+- **Breakpoints:** Mobile (default) — hamburger left, centered brand; tablet (`md`, 768px+) — brand left, hamburger right; desktop (`lg`, 1024px+) — inline centered links + right-aligned Book Now, no hamburger.
+- **Destinations:** Hash routes on `/` (`/#about`, `/#services`, etc., and `/#book`) reserved for later section tasks; no placeholder section content or extra routes added.
+- **Accessibility:** Menu button uses `aria-expanded`, `aria-controls`, 44×44px targets; full-screen menu closes on Escape and link selection; focus returns to the menu trigger on close; closed menu uses `hidden` and `pointer-events-none` with `tabIndex={-1}` on links.
+- **Focus trap remediation:** Added lightweight focus trap to `MobileNav` dialog without external dependencies. Tab cycles focus within dialog (last to first), Shift+Tab cycles (first to last). Filters disabled/hidden elements from focusable set. Escape continues to close menu.
+- **Verification:** Implementation verified in Windsurf session; `npm run typecheck` and `npm run build` pass; responsive behavior confirmed against DESIGN_SYSTEM.md requirements.

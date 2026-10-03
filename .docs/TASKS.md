@@ -27,7 +27,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
 
 ## Phase 3 — Public Website
 
-- [ ] TASK-002 | S | depends: TASK-001 | status: todo
+- [ ] TASK-002 | S | depends: TASK-001 | status: review
   Title: Project Shell + Navigation
 
   Acceptance:
