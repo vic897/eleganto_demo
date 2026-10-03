@@ -66,7 +66,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - Primary/secondary buttons follow design-system Button rules (uppercase label variant where specified).
   - `npm run build` succeeds; no new TypeScript errors.
 
-- [ ] TASK-005 | S | depends: TASK-004 | status: todo
+- [ ] TASK-005 | S | depends: TASK-004 | status: review
   Title: Portfolio + Testimonials
 
   Acceptance:

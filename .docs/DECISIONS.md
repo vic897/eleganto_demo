@@ -73,3 +73,12 @@ Dashboard data and enquiry states are local/mock state.
 - **Responsive behavior:** Mobile (375px): 1-column stacked layout. Tablet (768px/md): 2-column grid. Desktop (1024px+/lg): 3-column grid with 24px gutter. Follows DESIGN_SYSTEM.md spacing and layout rules exactly.
 - **Typography:** Playfair Display for section H2 ("Offerings"), Inter for body text. Section header follows design system Section Header pattern (label + H2).
 - **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-005+ functionality added.
+
+### TASK-005 — Portfolio + Testimonials (Phase 3)
+- **Component structure:** Modular section components in `src/components/sections/` (portfolio.tsx, testimonials.tsx).
+- **Portfolio implementation:** Section with id="portfolio" for hash navigation. Grid of six 4:5 aspect ratio image placeholders using `--surface-elevated` background with subdued Image icon. No text overlays. Mobile: 2-column grid; tablet (768px/md): 2-column grid; desktop (1024px+/lg): 4-column grid.
+- **Testimonials implementation:** Section with id="testimonials" for hash navigation (matches nav-links.ts). Grid of three testimonial cards with Quote icon, italic placeholder text ("Client testimonial will be added once verified business content is available"), and "Client Name" caption. Cards use `--surface` background with 1px `--border`. Mobile: stacked list; tablet (768px/md): 2-column grid; desktop (1024px+/lg): 3-column grid.
+- **Placeholder strategy:** No invented client names, testimonials, or portfolio assets. Polished placeholder copy clearly communicates that verified business content is pending.
+- **Responsive behavior:** Follows DESIGN_SYSTEM.md spacing and layout rules. Portfolio uses 2-column at tablet per design system requirement. Testimonials uses stacked list on mobile (simpler than carousel) per acceptance criteria option.
+- **Typography:** Playfair Display for section H2s ("Work", "Kind Words"), Inter for body text. Section headers follow design system Section Header pattern (label + H2).
+- **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-006+ functionality added.
