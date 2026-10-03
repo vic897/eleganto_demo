@@ -54,7 +54,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - Typography and spacing follow design-system roles (serif headings, sans body).
   - `npm run build` succeeds; no new TypeScript errors.
 
-- [ ] TASK-004 | S | depends: TASK-003 | status: todo
+- [ ] TASK-004 | S | depends: TASK-003 | status: review
   Title: Services
 
   Acceptance:

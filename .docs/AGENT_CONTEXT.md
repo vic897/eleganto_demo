@@ -7,30 +7,30 @@ Current phase: Phase 3 — Public Website
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
 TASK-002 — Project Shell + Navigation (status: review, awaiting approval)
+TASK-003 — Hero + About (status: review, awaiting approval)
 
 Current task:
-TASK-003 — Hero + About — status: review
+TASK-004 — Services — status: review
 
 Implementation status:
-TASK-003 Hero and About sections implemented:
-- Hero section with H1, subheadline, and primary CTA
-- Hero mobile min-height: 100svh; desktop: 600px
-- Hero content anchored bottom with 32px padding
-- About section with 3:4 portrait placeholder and biography placeholder
-- Mobile: About stacks image above text
-- Desktop: About two-column layout with text vertically centered
-- Typography follows design system (serif headings, sans body)
-- No invented business content; polished placeholders used
+TASK-004 Services section implemented:
+- Section with id="services" for hash navigation
+- Grid of service cards with 3:4 image placeholders
+- Each card has title, description placeholder, and "Enquire" button
+- Cards are static containers; only the button is interactive
+- Mobile: 1-column stack; desktop: 3-column grid
+- Card surfaces use `--surface` with 1px `--border`
+- No invented services, prices, or business claims
+- Polished placeholder copy used throughout
 
-Files changed during TASK-003:
-- src/components/sections/hero.tsx
-- src/components/sections/about.tsx
+Files changed during TASK-004:
+- src/components/sections/services.tsx
 - src/app/page.tsx
 - .docs/AGENT_CONTEXT.md
 - .docs/TASKS.md
 - .docs/DECISIONS.md
 
-Verification (TASK-003):
+Verification (TASK-004):
 - `npm run typecheck` — pass
 - `npm run build` — pass
 - Responsive behavior follows DESIGN_SYSTEM.md
@@ -40,4 +40,4 @@ Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-003, then TASK-004 (Services). Do not start TASK-004 until TASK-003 is approved.
+Reviewer approval of TASK-004, then TASK-005 (Portfolio + Testimonials). Do not start TASK-005 until TASK-004 is approved.

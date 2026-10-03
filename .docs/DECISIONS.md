@@ -64,3 +64,12 @@ Dashboard data and enquiry states are local/mock state.
 - **Typography:** Playfair Display for headings (H1, H2), Inter for body text. Follows design system typography roles.
 - **Responsive behavior:** Mobile-first implementation (375px primary). Tablet (768px) and desktop (1024px+) breakpoints follow DESIGN_SYSTEM.md spacing and layout rules.
 - **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-004+ functionality added.
+
+### TASK-004 — Services (Phase 3)
+- **Component structure:** Modular section component in `src/components/sections/services.tsx`.
+- **Services implementation:** Section with id="services" for hash navigation. Grid of three service cards with 3:4 aspect ratio image placeholders using `--surface-elevated` background. Each card has title ("Service Category"), description placeholder ("Service description will be added once verified business content is available"), and "Enquire" button linking to `/#book`.
+- **Card behavior:** Cards are static `<div>` containers with `--surface` background and 1px `--border`. Only the inner Button is interactive (no nested interactive card per design system rule).
+- **Placeholder strategy:** No invented services, prices, or business claims. Polished placeholder copy clearly communicates that verified business content is pending. No price field included since no pricing has been verified.
+- **Responsive behavior:** Mobile (375px): 1-column stacked layout. Tablet (768px/md): 2-column grid. Desktop (1024px+/lg): 3-column grid with 24px gutter. Follows DESIGN_SYSTEM.md spacing and layout rules exactly.
+- **Typography:** Playfair Display for section H2 ("Offerings"), Inter for body text. Section header follows design system Section Header pattern (label + H2).
+- **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-005+ functionality added.
