@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { BookingEnquiry } from "@/types/booking";
+import type { BookingEnquiry } from "@/types/booking-enquiry";
 import { WHATSAPP_CONFIG } from "@/lib/booking-config";
 import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
@@ -12,16 +12,16 @@ export function BookingConfirmation({ enquiry }: BookingConfirmationProps) {
   const generateWhatsAppMessage = (): string => {
     const message = `New Booking Enquiry
 
-Service: ${enquiry.service}
-Preferred Date: ${enquiry.preferredDate}
-Location: ${enquiry.location}
+Service: ${enquiry.serviceId}
+Preferred Date: ${enquiry.dateLocation.preferredDate}
+Location: ${enquiry.dateLocation.location}
 
 Contact Details:
-Name: ${enquiry.name}
-Phone: ${enquiry.phone}
-Email: ${enquiry.email}
+Name: ${enquiry.contact.fullName}
+Phone: ${enquiry.contact.phone}
+Email: ${enquiry.contact.email}
 
-Submitted: ${enquiry.submittedAt.toLocaleDateString()}`;
+Submitted: ${new Date(enquiry.createdAt).toLocaleDateString()}`;
 
     return encodeURIComponent(message);
   };
@@ -57,19 +57,19 @@ Submitted: ${enquiry.submittedAt.toLocaleDateString()}`;
           <div className="space-y-2">
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Service</span>
-              <span className="text-sm text-foreground">{enquiry.service}</span>
+              <span className="text-sm text-foreground">{enquiry.serviceId}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">
                 Preferred Date
               </span>
               <span className="text-sm text-foreground">
-                {enquiry.preferredDate}
+                {enquiry.dateLocation.preferredDate}
               </span>
             </div>
             <div className="flex justify-between">
               <span className="text-sm text-muted-foreground">Location</span>
-              <span className="text-sm text-foreground">{enquiry.location}</span>
+              <span className="text-sm text-foreground">{enquiry.dateLocation.location}</span>
             </div>
           </div>
         </div>

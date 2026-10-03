@@ -119,7 +119,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
 
 ## Phase 5 — Dashboard
 
-- [ ] TASK-009 | S | depends: TASK-008 | status: todo
+- [ ] TASK-009 | S | depends: TASK-008 | status: review
   Title: Artist Dashboard
 
   Acceptance:

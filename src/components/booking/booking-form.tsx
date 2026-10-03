@@ -8,7 +8,8 @@ import { BookingStepDateLocation } from "./booking-step-date-location";
 import { BookingStepContact } from "./booking-step-contact";
 import { BookingStepReview } from "./booking-step-review";
 import { BookingConfirmation } from "./booking-confirmation";
-import { BookingFormData, BookingEnquiry, BookingStep } from "@/types/booking";
+import { BookingFormData, BookingStep } from "@/types/booking";
+import type { BookingEnquiry } from "@/types/booking-enquiry";
 
 const STEPS: BookingStep[] = [
   "service",
@@ -55,9 +56,19 @@ export function BookingForm() {
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const newEnquiry: BookingEnquiry = {
-      ...formData,
       id: crypto.randomUUID(),
-      submittedAt: new Date(),
+      serviceId: formData.service,
+      status: "pending",
+      contact: {
+        fullName: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+      },
+      dateLocation: {
+        preferredDate: formData.preferredDate,
+        location: formData.location,
+      },
+      createdAt: new Date().toISOString(),
     };
 
     setEnquiry(newEnquiry);

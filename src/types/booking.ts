@@ -8,8 +8,3 @@ export interface BookingFormData {
   phone: string;
   email: string;
 }
-
-export interface BookingEnquiry extends BookingFormData {
-  id: string;
-  submittedAt: Date;
-}
