@@ -3,9 +3,10 @@ import { StatusBadge } from "@/components/ui/status-badge";
 
 interface EnquiryCardProps {
   enquiry: BookingEnquiry;
+  onClick?: () => void;
 }
 
-export function EnquiryCard({ enquiry }: EnquiryCardProps) {
+export function EnquiryCard({ enquiry, onClick }: EnquiryCardProps) {
   const formattedDate = new Date(enquiry.dateLocation.preferredDate).toLocaleDateString(
     "en-US",
     {
@@ -25,7 +26,11 @@ export function EnquiryCard({ enquiry }: EnquiryCardProps) {
   );
 
   return (
-    <div className="rounded-[4px] border border-border bg-surface p-4 lg:p-6">
+    <button
+      onClick={onClick}
+      className="w-full rounded-[4px] border border-border bg-surface p-4 text-left transition-colors hover:border-border-interactive lg:p-6"
+      type="button"
+    >
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 space-y-3">
           <div className="flex items-center gap-2">
@@ -55,6 +60,6 @@ export function EnquiryCard({ enquiry }: EnquiryCardProps) {
           </p>
         </div>
       </div>
-    </div>
+    </button>
   );
 }

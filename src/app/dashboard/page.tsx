@@ -1,17 +1,31 @@
+"use client";
+
+import { useState } from "react";
 import { EnquiryCard } from "@/components/dashboard/enquiry-card";
+import { EnquiryDetail } from "@/components/dashboard/enquiry-detail";
 import { mockEnquiries } from "@/data/mock";
+import type { BookingEnquiry } from "@/types/booking-enquiry";
 import { Inbox } from "lucide-react";
 
 export default function DashboardPage() {
-  const pendingCount = mockEnquiries.filter(
-    (e) => e.status === "pending"
-  ).length;
-  const acceptedCount = mockEnquiries.filter(
-    (e) => e.status === "accepted"
-  ).length;
-  const rejectedCount = mockEnquiries.filter(
-    (e) => e.status === "rejected"
-  ).length;
+  const [enquiries, setEnquiries] = useState<BookingEnquiry[]>(mockEnquiries);
+  const [selectedEnquiryId, setSelectedEnquiryId] = useState<string | null>(
+    null
+  );
+
+  const selectedEnquiry = enquiries.find((e) => e.id === selectedEnquiryId);
+
+  const handleUpdateStatus = (id: string, newStatus: "accepted" | "rejected") => {
+    setEnquiries((prev) =>
+      prev.map((enquiry) =>
+        enquiry.id === id ? { ...enquiry, status: newStatus } : enquiry
+      )
+    );
+  };
+
+  const pendingCount = enquiries.filter((e) => e.status === "pending").length;
+  const acceptedCount = enquiries.filter((e) => e.status === "accepted").length;
+  const rejectedCount = enquiries.filter((e) => e.status === "rejected").length;
 
   return (
     <div className="mx-auto w-full max-w-[1200px] px-4 py-8 lg:py-12">
@@ -46,31 +60,43 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* Enquiry list */}
-      <div>
-        <h2 className="font-heading text-xl text-foreground lg:text-2xl">
-          Enquiries
-        </h2>
+      {/* Enquiry list or detail view */}
+      {selectedEnquiry ? (
+        <EnquiryDetail
+          enquiry={selectedEnquiry}
+          onBack={() => setSelectedEnquiryId(null)}
+          onUpdateStatus={handleUpdateStatus}
+        />
+      ) : (
+        <div>
+          <h2 className="font-heading text-xl text-foreground lg:text-2xl">
+            Enquiries
+          </h2>
 
-        {mockEnquiries.length === 0 ? (
-          <div className="mt-6 flex flex-col items-center justify-center rounded-[4px] border border-border bg-surface p-12 text-center">
-            <Inbox
-              className="size-12 text-muted-foreground lg:size-16"
-              strokeWidth={1.5}
-              aria-hidden
-            />
-            <p className="mt-4 text-base text-muted-foreground lg:text-lg">
-              No enquiries yet
-            </p>
-          </div>
-        ) : (
-          <div className="mt-4 space-y-4 lg:mt-6">
-            {mockEnquiries.map((enquiry) => (
-              <EnquiryCard key={enquiry.id} enquiry={enquiry} />
-            ))}
-          </div>
-        )}
-      </div>
+          {enquiries.length === 0 ? (
+            <div className="mt-6 flex flex-col items-center justify-center rounded-[4px] border border-border bg-surface p-12 text-center">
+              <Inbox
+                className="size-12 text-muted-foreground lg:size-16"
+                strokeWidth={1.5}
+                aria-hidden
+              />
+              <p className="mt-4 text-base text-muted-foreground lg:text-lg">
+                No enquiries yet
+              </p>
+            </div>
+          ) : (
+            <div className="mt-4 space-y-4 lg:mt-6">
+              {enquiries.map((enquiry) => (
+                <EnquiryCard
+                  key={enquiry.id}
+                  enquiry={enquiry}
+                  onClick={() => setSelectedEnquiryId(enquiry.id)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

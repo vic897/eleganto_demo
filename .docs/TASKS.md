@@ -130,7 +130,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - Dashboard is read-only for enquiry records at the data layer (no database persistence).
   - `npm run build` succeeds; no new TypeScript errors.
 
-- [ ] TASK-010 | S | depends: TASK-009 | status: todo
+- [ ] TASK-010 | S | depends: TASK-009 | status: review
   Title: Enquiry Detail + Actions
 
   Acceptance:
