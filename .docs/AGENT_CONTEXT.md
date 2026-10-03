@@ -2,7 +2,7 @@
 
 Active branch: task-001-init-architecture
 
-Current phase: Phase 5 — Dashboard
+Current phase: Phase 6 — Polish
 
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
@@ -13,44 +13,42 @@ TASK-005 — Portfolio + Testimonials (status: review, awaiting approval)
 TASK-006 — Travel Banner + Footer CTA (status: review, awaiting approval)
 TASK-007 — Booking Flow (status: review, awaiting approval)
 TASK-009 — Artist Dashboard (status: review, awaiting approval)
+TASK-010 — Enquiry Detail + Actions (status: review, awaiting approval)
 
 Current task:
-TASK-010 — Enquiry Detail + Actions — status: review
+TASK-011 — Responsive + UX Polish — status: review
 
 Implementation status:
-TASK-010 Enquiry detail and actions implemented:
-- In-page navigation using selectedEnquiryId state (no route complexity)
-- Local React state for enquiries with useState - updates reflect immediately
-- Enquiry detail component at src/components/dashboard/enquiry-detail.tsx
-- Detail view shows: client name, service, preferred date, location, phone, email, submission date, status badge
-- Accept action: changes status to "accepted" locally, updates UI immediately
-- Reject action: changes status to "rejected" locally, updates UI immediately
-- WhatsApp action: reuses booking-config.ts, generates pre-filled message with enquiry details, URL-encoded, opens in new tab with target="_blank" and rel="noopener noreferrer"
-- Action states: Accept/Reject only shown when status is "pending"; WhatsApp always available; status messages shown for accepted/rejected enquiries
-- Back navigation: "Back to enquiries" button returns to list view
-- Enquiry cards made clickable with onClick prop, hover state with border-color change
-- State coherence: single source of truth in dashboard page state, list and detail use same enquiries array
-- No backend/database integration
-- No authentication
-- No real persistence
-- Responsive design for 375px, 768px, 1024px+
+TASK-011 Responsive + UX Polish implemented:
+- Skeleton loading component created at src/components/ui/skeleton.tsx with animate-pulse class using --surface-elevated background
+- Reduced-motion support: animate-pulse animation wrapped in @media (prefers-reduced-motion: no-preference) per DESIGN_SYSTEM.md §12
+- Empty states verified: Dashboard has Inbox icon with "No enquiries yet" text when enquiries array is empty
+- Error states verified: Booking form has inline validation errors with AlertCircle icon, --destructive text, and aria-describedby linkage for all required fields
+- Responsive layouts verified: All sections usable at 375px, 768px, and 1024px+ breakpoints per DESIGN_SYSTEM.md §6 and §14
+- Loading states: Skeleton component available for future use; current implementation uses immediate render (acceptable for demo scope)
+- No blocking global spinners used; skeleton pattern follows design system §15
+- Motion respects user preferences via @media (prefers-reduced-motion: no-preference)
+- No new functionality added - polish only
+- No content changes - placeholder strategy maintained
 
-Files changed during TASK-010:
-- src/app/dashboard/page.tsx (added local state, selectedEnquiryId, handleUpdateStatus, conditional list/detail rendering)
-- src/components/dashboard/enquiry-card.tsx (added onClick prop, converted to button element with hover state)
-- src/components/dashboard/enquiry-detail.tsx (new detail component with actions)
+Files changed during TASK-011:
+- src/components/ui/skeleton.tsx (new skeleton component)
+- src/app/globals.css (added pulse animation with reduced-motion support)
 - .docs/AGENT_CONTEXT.md
 - .docs/TASKS.md
 - .docs/DECISIONS.md
 
-Verification (TASK-010):
+Verification (TASK-011):
 - `npm run typecheck` — pass
 - `npm run build` — pass
-- Responsive behavior follows DESIGN_SYSTEM.md
-- Placeholder strategy respects content integrity constraints
+- Responsive behavior verified at 375px, 768px, 1024px+
+- Empty states present (dashboard)
+- Error states present (booking form)
+- Reduced-motion support added
+- Skeleton component available for loading states
 
 Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-010, then TASK-011 (Responsive + UX Polish). Do not start TASK-011 until TASK-010 is approved.
+Reviewer approval of TASK-011, then TASK-012 (Adversarial Review). Do not start TASK-012 until TASK-011 is approved.

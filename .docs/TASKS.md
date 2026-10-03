@@ -144,7 +144,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
 
 ## Phase 6 — Polish
 
-- [ ] TASK-011 | S | depends: TASK-010 | status: todo
+- [ ] TASK-011 | S | depends: TASK-010 | status: review
   Title: Responsive + UX Polish
 
   Acceptance:

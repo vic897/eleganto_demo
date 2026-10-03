@@ -95,6 +95,10 @@
   .motion-page-enter {
     animation: page-fade-in 200ms ease-in-out;
   }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
 }
 
 @keyframes page-fade-in {
@@ -103,5 +107,15 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
