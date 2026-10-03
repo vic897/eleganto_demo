@@ -77,7 +77,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - No text overlays on portfolio tiles by default.
   - `npm run build` succeeds; no new TypeScript errors.
 
-- [ ] TASK-006 | S | depends: TASK-005 | status: todo
+- [ ] TASK-006 | S | depends: TASK-005 | status: review
   Title: Travel Banner + Footer CTA
 
   Acceptance:

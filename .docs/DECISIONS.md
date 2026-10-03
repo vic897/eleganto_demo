@@ -82,3 +82,13 @@ Dashboard data and enquiry states are local/mock state.
 - **Responsive behavior:** Follows DESIGN_SYSTEM.md spacing and layout rules. Portfolio uses 2-column at tablet per design system requirement. Testimonials uses stacked list on mobile (simpler than carousel) per acceptance criteria option.
 - **Typography:** Playfair Display for section H2s ("Work", "Kind Words"), Inter for body text. Section headers follow design system Section Header pattern (label + H2).
 - **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-006+ functionality added.
+
+### TASK-006 — Travel Banner + Footer CTA (Phase 3)
+- **Component structure:** Modular section components in `src/components/sections/` (travel.tsx, footer-cta.tsx).
+- **Travel implementation:** Section with id="travel" for hash navigation (matches nav-links.ts). Uses `--surface-elevated` background with 1px `--border` per design system. Contains MapPin icon and placeholder copy ("Verified travel policy and service area information will be added here. This section will detail coverage regions, travel fees, and minimum booking requirements once business content is supplied.").
+- **Footer CTA implementation:** Centered section with "Ready to Book?" H2 and supporting text. Primary "Book Now" button linking to `/#book` for future booking flow. Button enforces 44px minimum touch target.
+- **Placeholder strategy:** No invented destinations, fees, coverage areas, or travel policies. Polished placeholder copy clearly communicates that verified business content is pending.
+- **Responsive behavior:** Follows DESIGN_SYSTEM.md spacing rules. Mobile: stacked and center-aligned per design system Footer specification. Tablet/desktop: maintains centered layout with appropriate spacing.
+- **Typography:** Playfair Display for section H2s ("Service Area", "Ready to Book?"), Inter for body text. Section headers follow design system Section Header pattern (label + H2).
+- **Deviation note:** Acceptance criteria specified Instagram social link and copyright line in Footer, but these were not implemented as no verified social accounts or business information exists. Footer CTA focuses on conversion to booking flow per primary objective.
+- **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-007+ functionality added.

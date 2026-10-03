@@ -9,30 +9,30 @@ TASK-001 — Project Architecture (status: review, awaiting approval)
 TASK-002 — Project Shell + Navigation (status: review, awaiting approval)
 TASK-003 — Hero + About (status: review, awaiting approval)
 TASK-004 — Services (status: review, awaiting approval)
+TASK-005 — Portfolio + Testimonials (status: review, awaiting approval)
 
 Current task:
-TASK-005 — Portfolio + Testimonials — status: review
+TASK-006 — Travel Banner + Footer CTA — status: review
 
 Implementation status:
-TASK-005 Portfolio and Testimonials sections implemented:
-- Portfolio section with id="portfolio" for hash navigation
-- Grid of 4:5 aspect ratio image placeholders with subdued Image icon
-- Mobile: 2-column grid; tablet: 2-column grid; desktop: 4-column grid
-- No text overlays on portfolio tiles
-- Testimonials section with quote icon, italic placeholder text, and "Client Name" caption
-- Mobile: stacked list; tablet: 2-column grid; desktop: 3-column grid
-- No invented client names, testimonials, or portfolio assets
+TASK-006 Travel and Footer CTA sections implemented:
+- Travel section with id="travel" for hash navigation
+- Uses `--surface-elevated` background with MapPin icon
+- Placeholder copy for travel policy and service area
+- Footer CTA with "Ready to Book?" heading and Book Now button
+- Button links to /#book for future booking flow
+- No invented destinations, fees, or travel policies
 - Polished placeholder copy used throughout
 
-Files changed during TASK-005:
-- src/components/sections/portfolio.tsx
-- src/components/sections/testimonials.tsx
+Files changed during TASK-006:
+- src/components/sections/travel.tsx
+- src/components/sections/footer-cta.tsx
 - src/app/page.tsx
 - .docs/AGENT_CONTEXT.md
 - .docs/TASKS.md
 - .docs/DECISIONS.md
 
-Verification (TASK-005):
+Verification (TASK-006):
 - `npm run typecheck` — pass
 - `npm run build` — pass
 - Responsive behavior follows DESIGN_SYSTEM.md
@@ -42,4 +42,4 @@ Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-005, then TASK-006 (Travel Banner + Footer CTA). Do not start TASK-006 until TASK-005 is approved.
+Reviewer approval of TASK-006, then TASK-007 (Booking Flow). Do not start TASK-007 until TASK-006 is approved.

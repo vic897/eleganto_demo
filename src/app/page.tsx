@@ -3,6 +3,8 @@ import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Testimonials } from "@/components/sections/testimonials";
+import { Travel } from "@/components/sections/travel";
+import { FooterCTA } from "@/components/sections/footer-cta";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <Services />
       <Portfolio />
       <Testimonials />
+      <Travel />
+      <FooterCTA />
     </div>
   );
 }
