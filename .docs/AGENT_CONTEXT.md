@@ -2,7 +2,7 @@
 
 Active branch: task-001-init-architecture
 
-Current phase: Phase 3 — Public Website
+Current phase: Phase 4 — Booking
 
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
@@ -10,29 +10,43 @@ TASK-002 — Project Shell + Navigation (status: review, awaiting approval)
 TASK-003 — Hero + About (status: review, awaiting approval)
 TASK-004 — Services (status: review, awaiting approval)
 TASK-005 — Portfolio + Testimonials (status: review, awaiting approval)
+TASK-006 — Travel Banner + Footer CTA (status: review, awaiting approval)
 
 Current task:
-TASK-006 — Travel Banner + Footer CTA — status: review
+TASK-007 — Booking Flow — status: review
 
 Implementation status:
-TASK-006 Travel and Footer CTA sections implemented:
-- Travel section with id="travel" for hash navigation
-- Uses `--surface-elevated` background with MapPin icon
-- Placeholder copy for travel policy and service area
-- Footer CTA with "Ready to Book?" heading and Book Now button
-- Button links to /#book for future booking flow
-- No invented destinations, fees, or travel policies
+TASK-007 Booking enquiry flow implemented:
+- 5-step inline flow: Service → Date/Location → Contact → Review → Submit
+- Progress indicator shows current step (1-5)
+- Step 1: Service selection with 3 placeholder service categories
+- Step 2: Date and Location inputs with validation
+- Step 3: Contact information (name, phone, email) with validation
+- Step 4: Review screen showing all entered information
+- Step 5: Submit with simulated submission delay
+- Confirmation screen with WhatsApp CTA
+- WhatsApp number centralized in config file (placeholder)
+- Form data stored in local React state only
+- No backend/database integration
+- No invented services, prices, or business details
 - Polished placeholder copy used throughout
 
-Files changed during TASK-006:
-- src/components/sections/travel.tsx
-- src/components/sections/footer-cta.tsx
+Files changed during TASK-007:
+- src/lib/booking-config.ts (WhatsApp config)
+- src/types/booking.ts (TypeScript types)
+- src/components/booking/booking-progress.tsx
+- src/components/booking/booking-step-service.tsx
+- src/components/booking/booking-step-date-location.tsx
+- src/components/booking/booking-step-contact.tsx
+- src/components/booking/booking-step-review.tsx
+- src/components/booking/booking-confirmation.tsx
+- src/components/booking/booking-form.tsx
 - src/app/page.tsx
 - .docs/AGENT_CONTEXT.md
 - .docs/TASKS.md
 - .docs/DECISIONS.md
 
-Verification (TASK-006):
+Verification (TASK-007):
 - `npm run typecheck` — pass
 - `npm run build` — pass
 - Responsive behavior follows DESIGN_SYSTEM.md
@@ -42,4 +56,4 @@ Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-006, then TASK-007 (Booking Flow). Do not start TASK-007 until TASK-006 is approved.
+Reviewer approval of TASK-007, then TASK-008 (Confirmation + WhatsApp). Do not start TASK-008 until TASK-007 is approved.

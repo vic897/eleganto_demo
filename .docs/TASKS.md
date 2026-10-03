@@ -90,7 +90,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
 
 ## Phase 4 — Booking
 
-- [ ] TASK-007 | S | depends: TASK-006 | status: todo
+- [ ] TASK-007 | S | depends: TASK-006 | status: review
   Title: Booking Flow
 
   Acceptance:

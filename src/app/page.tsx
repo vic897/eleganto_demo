@@ -5,6 +5,7 @@ import { Portfolio } from "@/components/sections/portfolio";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Travel } from "@/components/sections/travel";
 import { FooterCTA } from "@/components/sections/footer-cta";
+import { BookingForm } from "@/components/booking/booking-form";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Testimonials />
       <Travel />
       <FooterCTA />
+      <BookingForm />
     </div>
   );
 }
