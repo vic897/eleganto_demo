@@ -10,15 +10,15 @@ const STATUS_CONFIG: Record<
 > = {
   pending: {
     label: "Pending",
-    className: "bg-[color-mix(in_srgb,theme(colors.warning)_10%,transparent)] text-warning",
+    className: "bg-[#b87c35]/15 text-[#b87c35] border border-[#b87c35]/30",
   },
   accepted: {
     label: "Accepted",
-    className: "bg-[color-mix(in_srgb,theme(colors.success)_10%,transparent)] text-success",
+    className: "bg-[#3f6e4a]/15 text-[#4e9960] border border-[#3f6e4a]/30",
   },
   rejected: {
     label: "Rejected",
-    className: "bg-[color-mix(in_srgb,theme(colors.destructive)_10%,transparent)] text-destructive",
+    className: "bg-[#88222b]/15 text-[#c44b57] border border-[#88222b]/30",
   },
 };
 
@@ -27,7 +27,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
 
   return (
     <span
-      className={`inline-flex items-center rounded-[4px] px-2 py-1 text-xs font-medium ${config.className}`}
+      className={`inline-flex shrink-0 items-center rounded-[2px] px-2 py-1 text-[10px] font-medium uppercase tracking-[0.18em] ${config.className}`}
     >
       {config.label}
     </span>

@@ -29,32 +29,39 @@ export default function DashboardPage() {
 
   return (
     <div className="mx-auto w-full max-w-[1200px] px-4 py-8 lg:py-12">
-      <div className="mb-8 lg:mb-12">
-        <h1 className="font-heading text-[28px] leading-[1.2] tracking-tight text-foreground lg:text-[40px]">
-          Dashboard
+      {/* Dashboard Header */}
+      <div className="mb-8 lg:mb-12 space-y-2 border-b border-white/[0.08] pb-6">
+        <div className="inline-flex items-center gap-2">
+          <span className="h-px w-5 bg-[#c88f8f]" />
+          <span className="text-[11px] uppercase tracking-[0.25em] font-medium text-[#c88f8f]">
+            Eleganto Atelier
+          </span>
+        </div>
+        <h1 className="font-heading text-[28px] leading-[1.2] tracking-tight text-[#fbf8f5] lg:text-[40px]">
+          Reservation Dashboard
         </h1>
-        <p className="mt-2 text-base text-muted-foreground lg:text-lg">
-          View and manage booking enquiries
+        <p className="text-sm text-[#a89a95]">
+          View and manage booking enquiries from atelier clients.
         </p>
       </div>
 
-      {/* Status summary */}
+      {/* Status Summary */}
       <div className="mb-8 grid grid-cols-3 gap-4 lg:mb-12 lg:gap-6">
-        <div className="rounded-[4px] border border-border bg-surface p-4 lg:p-6">
-          <p className="text-sm text-muted-foreground lg:text-base">Pending</p>
-          <p className="mt-1 font-heading text-2xl text-foreground lg:text-3xl">
+        <div className="rounded-[2px] border border-white/[0.08] bg-[#171315] p-4 lg:p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#a89a95]">Pending</p>
+          <p className="mt-2 font-heading text-2xl text-[#b87c35] lg:text-3xl">
             {pendingCount}
           </p>
         </div>
-        <div className="rounded-[4px] border border-border bg-surface p-4 lg:p-6">
-          <p className="text-sm text-muted-foreground lg:text-base">Accepted</p>
-          <p className="mt-1 font-heading text-2xl text-foreground lg:text-3xl">
+        <div className="rounded-[2px] border border-white/[0.08] bg-[#171315] p-4 lg:p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#a89a95]">Accepted</p>
+          <p className="mt-2 font-heading text-2xl text-[#3f6e4a] lg:text-3xl">
             {acceptedCount}
           </p>
         </div>
-        <div className="rounded-[4px] border border-border bg-surface p-4 lg:p-6">
-          <p className="text-sm text-muted-foreground lg:text-base">Rejected</p>
-          <p className="mt-1 font-heading text-2xl text-foreground lg:text-3xl">
+        <div className="rounded-[2px] border border-white/[0.08] bg-[#171315] p-4 lg:p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-[#a89a95]">Rejected</p>
+          <p className="mt-2 font-heading text-2xl text-[#88222b] lg:text-3xl">
             {rejectedCount}
           </p>
         </div>
@@ -69,23 +76,26 @@ export default function DashboardPage() {
         />
       ) : (
         <div>
-          <h2 className="font-heading text-xl text-foreground lg:text-2xl">
-            Enquiries
+          <h2 className="font-heading text-xl text-[#fbf8f5] lg:text-2xl mb-1">
+            Enquiry Register
           </h2>
+          <p className="text-xs text-[#a89a95] mb-6 uppercase tracking-[0.15em]">
+            {enquiries.length} total reservation{enquiries.length !== 1 ? "s" : ""}
+          </p>
 
           {enquiries.length === 0 ? (
-            <div className="mt-6 flex flex-col items-center justify-center rounded-[4px] border border-border bg-surface p-12 text-center">
+            <div className="flex flex-col items-center justify-center rounded-[2px] border border-white/[0.08] bg-[#171315] p-12 text-center">
               <Inbox
-                className="size-12 text-muted-foreground lg:size-16"
+                className="size-12 text-[#a89a95] lg:size-16"
                 strokeWidth={1.5}
                 aria-hidden
               />
-              <p className="mt-4 text-base text-muted-foreground lg:text-lg">
-                No enquiries yet
+              <p className="mt-4 text-sm text-[#a89a95]">
+                No reservation enquiries yet.
               </p>
             </div>
           ) : (
-            <div className="mt-4 space-y-4 lg:mt-6">
+            <div className="space-y-3 lg:space-y-4">
               {enquiries.map((enquiry) => (
                 <EnquiryCard
                   key={enquiry.id}

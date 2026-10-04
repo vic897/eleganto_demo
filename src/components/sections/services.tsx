@@ -22,8 +22,8 @@ const servicesData: ServiceItem[] = [
       "Bespoke makeup styling tailored to your facial architecture and event lighting. Includes preview consultation and long-lasting couture formulations.",
     image:
       "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=85",
-    gridSpan: "lg:col-span-8",
-    aspectRatio: "aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/9]",
+    gridSpan: "md:col-span-2 lg:col-span-8",
+    aspectRatio: "aspect-[4/3] sm:aspect-[16/9] lg:aspect-[16/9]",
   },
   {
     id: "hair",
@@ -35,7 +35,7 @@ const servicesData: ServiceItem[] = [
     image:
       "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=85",
     gridSpan: "lg:col-span-4",
-    aspectRatio: "aspect-[4/5] sm:aspect-[4/5] lg:aspect-[4/5]",
+    aspectRatio: "aspect-[4/5]",
   },
   {
     id: "manicure",
@@ -82,10 +82,11 @@ const servicesData: ServiceItem[] = [
       "Holistic event-ready rituals including micro-current toning, LED light rejuvenation, and deep moisture sealing for unblemished radiance.",
     image:
       "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=85",
-    gridSpan: "lg:col-span-12",
-    aspectRatio: "aspect-[16/9] sm:aspect-[21/9] lg:aspect-[21/8]",
+    gridSpan: "md:col-span-2 lg:col-span-12",
+    aspectRatio: "aspect-[4/3] sm:aspect-[21/9] lg:aspect-[21/8]",
   },
 ];
+
 
 export function Services() {
   return (

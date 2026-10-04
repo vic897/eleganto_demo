@@ -91,7 +91,8 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply font-sans antialiased scroll-smooth;
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
     color-scheme: dark;
   }
   body {
@@ -113,11 +114,15 @@
     text-transform: uppercase;
     font-weight: 500;
   }
+  /* Fade-up reveal for sections — use with Intersection Observer or CSS animation-delay */
+  .section-fade-up {
+    animation: fade-up 0.7s ease-out both;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .motion-page-enter {
-    animation: page-fade-in 400ms ease-out;
+    animation: page-fade-in 500ms ease-out;
   }
 
   .animate-pulse {
@@ -125,10 +130,28 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .motion-page-enter,
+  .section-fade-up {
+    animation: none;
+  }
+}
+
 @keyframes page-fade-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
