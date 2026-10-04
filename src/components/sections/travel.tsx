@@ -23,9 +23,7 @@ export function Travel() {
             aria-hidden
           />
           <p className="text-base leading-relaxed text-muted-foreground lg:text-lg">
-            Verified travel policy and service area information will be added
-            here. This section will detail coverage regions, travel fees, and
-            minimum booking requirements once business content is supplied.
+            Available for on-location services within the metropolitan area. Travel arrangements for destination events can be discussed during the enquiry process. (Demo travel information - replace with verified service area and travel policy)
           </p>
         </div>
       </div>

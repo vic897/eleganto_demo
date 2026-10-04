@@ -1,21 +1,24 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const placeholderServices = [
+const demoServices = [
   {
-    title: "Service Category",
+    title: "Bridal Makeup",
     description:
-      "Service description will be added once verified business content is available.",
+      "Complete bridal makeup services for your special day. Includes trial session and on-location service. (Demo category - replace with verified service details)",
+    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
   },
   {
-    title: "Service Category",
+    title: "Engagement Makeup",
     description:
-      "Service description will be added once verified business content is available.",
+      "Elegant engagement and pre-wedding event makeup. Perfect for photoshoots and ceremonies. (Demo category - replace with verified service details)",
+    image: "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80",
   },
   {
-    title: "Service Category",
+    title: "Editorial & Occasion Makeup",
     description:
-      "Service description will be added once verified business content is available.",
+      "Professional makeup for editorial shoots, parties, and special occasions. (Demo category - replace with verified service details)",
+    image: "https://images.unsplash.com/photo-1503236823255-94609f598e71?w=600&q=80",
   },
 ];
 
@@ -32,13 +35,19 @@ export function Services() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-        {placeholderServices.map((service, index) => (
+        {demoServices.map((service, index) => (
           <div
             key={index}
             className="flex flex-col rounded-[4px] border border-border bg-surface"
           >
-            {/* 3:4 image placeholder */}
-            <div className="aspect-[3/4] w-full bg-surface-elevated" />
+            {/* 3:4 demo image */}
+            <div className="aspect-[3/4] w-full overflow-hidden">
+              <img
+                src={service.image}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            </div>
 
             <div className="flex flex-1 flex-col space-y-4 p-4">
               <div className="space-y-2">

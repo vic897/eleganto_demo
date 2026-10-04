@@ -7,9 +7,9 @@ interface BookingStepServiceProps {
 }
 
 const SERVICE_PLACEHOLDERS = [
-  "Service Category 1",
-  "Service Category 2",
-  "Service Category 3",
+  "Bridal Makeup",
+  "Engagement Makeup",
+  "Editorial & Occasion Makeup",
 ] as const;
 
 export function BookingStepService({

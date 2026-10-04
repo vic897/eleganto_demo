@@ -15,36 +15,46 @@ TASK-007 — Booking Flow (status: review, awaiting approval)
 TASK-009 — Artist Dashboard (status: review, awaiting approval)
 TASK-010 — Enquiry Detail + Actions (status: review, awaiting approval)
 TASK-011 — Responsive + UX Polish (status: review, awaiting approval)
+TASK-012 — Adversarial Review (status: review, awaiting approval)
 
 Current task:
-TASK-012 — Adversarial Review — status: review
+DEMO-001 — Client Demo Content & Asset Pass — status: review
 
 Implementation status:
-TASK-012 Adversarial Review completed:
-- Independent adversarial audit covering code/architecture, UX/accessibility, business-content integrity, out-of-scope verification, end-to-end 375px demo, responsive verification, and PROJECT_SPEC §9 Definition of Done
-- Overall verdict: PASS - No blockers found
-- Findings: No critical, high, or medium findings. One informational finding regarding booking-progress aria-live announcement (redundant step announcements) - explicitly accepted as-is for demo scope
-- UX/accessibility review: Passed against DESIGN_SYSTEM.md §13. Verified keyboard accessibility, visible focus states, form labels, aria relationships, aria-invalid usage, error messaging, semantic HTML, heading hierarchy, button/link semantics, 44px minimum touch targets, contrast/token usage, mobile usability, focus behavior in navigation, mobile navigation Escape behavior, booking progress/navigation, booking validation, confirmation screen, dashboard interaction states, and readable status indicators
-- Business-content integrity: Passed. Verified no invented business information presented as factual. All business content is clearly marked as placeholder or uses obviously safe demo values
-- Out-of-scope verification: Passed. No database integration, ORM persistence, authentication, real payments, automated email, automated SMS, or calendar synchronization found
-- End-to-end 375px demo: Passed. Client journey (public site → booking → confirmation → WhatsApp) completable. Artist journey (dashboard → detail → actions) completable
-- Responsive verification: Passed at 375px, 768px, and 1024px+. No horizontal overflow, clipped controls, or layout issues
-- PROJECT_SPEC §9 Definition of Done: All criteria passed
-- No implementation blockers remain
+DEMO-001 Client Demo Content & Asset Pass completed:
+- Transformed prototype from placeholder-heavy development state to polished client-demo state
+- All content explicitly marked as DEMO/SAMPLE content with disclaimers for replacement with verified client content before production
+- Hero section: Added premium makeup-artistry demo image from Unsplash with gradient overlay, white text for contrast
+- About section: Added professional portrait demo image and concise demo-safe biography
+- Services section: Replaced generic labels with demo categories (Bridal Makeup, Engagement Makeup, Editorial & Occasion Makeup) with corresponding demo images
+- Portfolio section: Added six coherent makeup-artistry demo images maintaining 4:5 aspect ratio
+- Testimonials section: Added three fictional demo testimonials with demo-safe client names
+- Travel section: Replaced placeholder with concise demo-safe copy about metropolitan availability
+- Footer section: Replaced placeholder with clean demo-safe copyright notice
+- Booking step service: Updated to use same demo categories for consistency
+- All demo images sourced from Unsplash (free stock photography) with appropriate themes
+- No architecture changes, no new functionality, only content substitution for demo presentation
 
-Files changed during TASK-012:
-- .docs/TASKS.md (TASK-012 status changed to review)
-- .docs/DECISIONS.md (added TASK-012 decision note)
+Files changed during DEMO-001:
+- src/components/sections/hero.tsx (added demo image, gradient overlay, white text)
+- src/components/sections/about.tsx (added demo portrait, demo biography, removed User icon)
+- src/components/sections/services.tsx (added demo categories, images, descriptions)
+- src/components/sections/portfolio.tsx (added demo images, removed ImageIcon)
+- src/components/sections/testimonials.tsx (added demo testimonials with names)
+- src/components/sections/travel.tsx (added demo copy)
+- src/components/layout/site-footer.tsx (added demo copyright)
+- src/components/booking/booking-step-service.tsx (updated demo categories)
+- .docs/DECISIONS.md (added DEMO-001 decision note)
 - .docs/AGENT_CONTEXT.md
 
-Verification (TASK-012):
+Verification (DEMO-001):
 - `npm run typecheck` — pass
 - `npm run build` — pass
-- Independent adversarial audit passed
-- No source code changes required
+- No TypeScript errors or build issues
+- Responsive behavior preserved (no layout changes)
 
 Blockers:
 None
 
-Next step:
-Reviewer/product-owner approval of TASK-012.
+Notes:
+This is a DEMO READINESS task, not a product-feature task. All content must be replaced with verified client-provided content before production use.

@@ -1,6 +1,11 @@
-import { Image as ImageIcon } from "lucide-react";
-
-const portfolioPlaceholders = Array.from({ length: 6 });
+const demoPortfolioImages = [
+  "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80",
+  "https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80",
+  "https://images.unsplash.com/photo-1503236823255-94609f598e71?w=600&q=80",
+  "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+  "https://images.unsplash.com/photo-1595959183082-7b570b7e1dfa?w=600&q=80",
+  "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+];
 
 export function Portfolio() {
   return (
@@ -15,18 +20,16 @@ export function Portfolio() {
       </div>
 
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-        {portfolioPlaceholders.map((_, index) => (
+        {demoPortfolioImages.map((image, index) => (
           <div
             key={index}
-            className="aspect-[4/5] w-full bg-surface-elevated"
+            className="aspect-[4/5] w-full overflow-hidden"
           >
-            <div className="flex h-full items-center justify-center">
-              <ImageIcon
-                className="size-12 text-muted-foreground"
-                strokeWidth={1.5}
-                aria-hidden
-              />
-            </div>
+            <img
+              src={image}
+              alt=""
+              className="h-full w-full object-cover"
+            />
           </div>
         ))}
       </div>

@@ -1,6 +1,19 @@
 import { Quote } from "lucide-react";
 
-const testimonialPlaceholders = Array.from({ length: 3 });
+const demoTestimonials = [
+  {
+    quote: "Absolutely stunning work! The makeup was flawless and lasted throughout the entire event. (Demo testimonial - replace with verified client feedback)",
+    name: "Priya Sharma (Demo Client)",
+  },
+  {
+    quote: "Professional, punctual, and incredibly talented. My bridal look was exactly what I envisioned. (Demo testimonial - replace with verified client feedback)",
+    name: "Ananya Desai (Demo Client)",
+  },
+  {
+    quote: "The attention to detail is remarkable. Every look was perfectly tailored to the occasion. (Demo testimonial - replace with verified client feedback)",
+    name: "Meera Krishnan (Demo Client)",
+  },
+];
 
 export function Testimonials() {
   return (
@@ -15,7 +28,7 @@ export function Testimonials() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {testimonialPlaceholders.map((_, index) => (
+        {demoTestimonials.map((testimonial, index) => (
           <div
             key={index}
             className="flex flex-col space-y-4 rounded-[4px] border border-border bg-surface p-6"
@@ -26,11 +39,10 @@ export function Testimonials() {
               aria-hidden
             />
             <p className="text-base italic leading-relaxed text-muted-foreground lg:text-lg">
-              Client testimonial will be added once verified business content is
-              available.
+              {testimonial.quote}
             </p>
             <p className="text-caption text-muted-foreground">
-              Client Name
+              {testimonial.name}
             </p>
           </div>
         ))}

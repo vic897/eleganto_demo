@@ -162,3 +162,18 @@ Dashboard data and enquiry states are local/mock state.
 - **Responsive verification:** Passed at 375px, 768px, and 1024px+. No horizontal overflow, clipped controls, awkward wrapping, inaccessible buttons, overlapping fixed elements, unsafe-area problems, or excessively cramped layouts.
 - **PROJECT_SPEC §9 Definition of Done:** All criteria passed. Complete flow completable on 375px, empty/loading/responsive states not broken, independent code and UX review passed.
 - **Verification:** `npm run typecheck` passed with no TypeScript errors. `npm run build` completed successfully with static pages generated for /, /_not-found, /dashboard.
+
+### DEMO-001 — Client Demo Content & Asset Pass
+- **Purpose:** Transform the technically complete prototype from placeholder-heavy development state to polished client-demo state for presentation purposes.
+- **Content strategy:** All content is explicitly marked as DEMO/SAMPLE content and must be replaced with verified client-provided content before production. No fictional content is presented as verified business information.
+- **Hero section:** Replaced `--surface-elevated` background placeholder with premium makeup-artistry demo image from Unsplash. Added gradient overlay for text contrast. Changed text color to white for readability over image. Added demo disclaimer in subheadline.
+- **About section:** Replaced User icon placeholder with professional portrait demo image from Unsplash. Replaced placeholder biography with concise demo-safe copy emphasizing refined, editorial approach. Removed User icon import. Added demo disclaimer.
+- **Services section:** Replaced generic "Service Category" labels with believable demo categories: Bridal Makeup, Engagement Makeup, Editorial & Occasion Makeup. Added corresponding demo images for each service card. Added demo disclaimers in descriptions. Updated booking-step-service.tsx to use same demo categories for consistency.
+- **Portfolio section:** Replaced six generic image placeholders with coherent makeup-artistry demo imagery from Unsplash. Maintained existing 4:5 aspect ratio and grid layout. Removed ImageIcon import.
+- **Testimonials section:** Populated three cards with clearly fictional demo testimonials using demo-safe names: Priya Sharma (Demo Client), Ananya Desai (Demo Client), Meera Krishnan (Demo Client). Added demo disclaimers in each testimonial.
+- **Travel section:** Replaced long placeholder paragraph with concise demo-safe copy about metropolitan area availability and destination event discussions. Added demo disclaimer.
+- **Footer section:** Removed "[Footer content placeholder]" and replaced with clean demo-safe copyright notice. Added demo disclaimer.
+- **Image sources:** All demo images sourced from Unsplash (free stock photography) with appropriate makeup-artistry themes. No watermarks or unrelated imagery.
+- **Responsive verification:** No layout changes made to component architecture. Existing responsive behavior preserved. New content fits within existing aspect ratios and spacing systems.
+- **Scope protection:** No architecture changes, no new functionality, no product features added. Only content substitution for demo presentation purposes.
+- **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.
