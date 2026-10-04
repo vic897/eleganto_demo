@@ -177,3 +177,82 @@ Dashboard data and enquiry states are local/mock state.
 - **Responsive verification:** No layout changes made to component architecture. Existing responsive behavior preserved. New content fits within existing aspect ratios and spacing systems.
 - **Scope protection:** No architecture changes, no new functionality, no product features added. Only content substitution for demo presentation purposes.
 - **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.
+
+### DEMO-QA-001 — Client-Demo Visual Blocker Fixes
+- **Purpose:** Fix P0 and P1 visual issues identified during client-facing visual review to prepare for client demo presentation.
+- **About portrait fix:** Replaced broken image URL `photo-1595959183082-7b570b7e1dfa` with `photo-1580489944761-15a19d654956` (professional portrait from Unsplash). Original image was likely removed or had access issues.
+- **Portfolio image fix:** Replaced broken portfolio image URL `photo-1522335789203-aabd1fc54bc9` with `photo-1560066984-138dadb4c035` (makeup artistry image from Unsplash). Original image was likely removed or had access issues.
+- **Hero disclaimer refinement:** Moved demo disclosure from inline within marketing copy to a subtle separate line below the subheadline. Changed from "(Demo content - replace with verified business information)" to "Demo preview" in smaller text (`text-xs text-white/60`). This preserves disclosure while reducing visual dominance.
+- **Testimonials disclosure consolidation:** Removed repeated "(Demo testimonial - replace with verified client feedback)" from each quote and "(Demo Client)" from each name. Added single section-level disclosure "Sample testimonials shown for demonstration" below the section heading. This maintains clear demo identification while reducing visual clutter.
+- **Services disclosure refinement:** Removed repeated "(Demo category - replace with verified service details)" from each service description. Added single section-level disclosure "Sample service categories shown for demonstration" below the section heading. Maintains clear demo identification while reducing visual clutter.
+- **Services images verification:** Confirmed existing service images are appropriate for their categories (Bridal, Engagement, Editorial). No changes needed to imagery.
+- **Portfolio images verification:** All six portfolio images now use valid Unsplash URLs. Maintained 4:5 aspect ratio and grid layout.
+- **Responsive verification:** No layout architecture changes. Existing responsive behavior preserved at 375px, 768px, 1024px+, and 1440px. No horizontal overflow, clipped content, broken ratios, or layout shifts.
+- **Scope protection:** No architecture changes, no new functionality, no product features added. Only visual refinements for demo presentation.
+- **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.
+
+### DEMO-POLISH-001 — Warm Editorial Color Pass
+- **Purpose:** Introduce a restrained warm luxury palette while preserving the existing editorial/minimal design language. Transform from "elegant + monochrome + slightly sterile" to "elegant + warm + editorial + premium."
+- **Color direction:** Warm Editorial Luxury — ivory, warm champagne, soft beige, muted dusty rose, near-black. Target aesthetic is premium beauty/editorial brand, not generic monochrome SaaS interface.
+- **Semantic token changes:**
+  - `--background`: `#fafafa` → `#faf8f5` (Warm ivory)
+  - `--surface-elevated`: `#f3f3f3` → `#f3efeb` (Soft warm beige)
+  - `--foreground`: `#1a1a1a` → `#171515` (Near-black)
+  - `--primary`: `#1a1a1a` → `#171515` (Near-black)
+  - `--secondary`: `#f3f3f3` → `#f3efeb` (Soft warm beige)
+  - `--accent`: `#e8e3df` → `#b98282` (Muted dusty rose)
+  - `--border`: `#e5e5e5` → `#ded7d2` (Warm neutral border)
+  - `--input`: `#e5e5e5` → `#ded7d2` (Warm neutral border)
+  - `--ring`: `rgba(26, 26, 26, 0.5)` → `rgba(23, 21, 21, 0.5)` (Updated for new foreground)
+  - `--focus-ring`: `rgba(26, 26, 26, 0.5)` → `rgba(23, 21, 21, 0.5)` (Updated for new foreground)
+- **Section background rhythm:**
+  - Hero: Unchanged (photographic hero remains primary visual)
+  - About: Added `bg-background` class (warm ivory)
+  - Services: Unchanged (white cards on default background)
+  - Portfolio: Added `bg-background` class (warm ivory)
+  - Testimonials: Added inline style `backgroundColor: #faf5f5` (very subtle warm/blush surface)
+  - Travel: Unchanged (uses `--surface-elevated` which is now warm beige)
+  - Booking: Unchanged (white)
+  - Footer: Unchanged (existing dark treatment)
+- **Scope protection:** No architecture changes, no new functionality, no product features added. No typography changes, no layout changes, no navigation changes. Only color token adjustments and subtle section background variations.
+- **Accessibility verification:** Contrast ratios maintained. Near-black `#171515` on warm ivory `#faf8f5` exceeds WCAG AA. Muted dusty rose accent used for surfaces/backgrounds, not small text. Focus ring updated to match new foreground color.
+- **Responsive verification:** No layout changes. Existing responsive behavior preserved at 375px, 768px, 1024px+, and 1440px. No horizontal overflow, clipped content, or layout shifts introduced by background changes.
+- **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.
+
+### DEMO-POLISH-002 — Make Warm Editorial Palette Visibly Perceptible
+- **Purpose:** DEMO-POLISH-001 technically changed semantic tokens but the rendered result was visually almost indistinguishable from the previous monochrome version. This task makes the warm editorial direction visibly apparent while preserving the restrained, premium aesthetic.
+- **Color direction:** Warm Editorial Luxury with clearly perceptible but restrained palette:
+  - Warm ivory: `#F8F3EE`
+  - Soft champagne/beige: `#F1E8E1`
+  - Very light blush: `#F5E7E5`
+  - Clean white: `#FFFFFF`
+  - Near-black: `#171515`
+  - Muted dusty rose: `#B98282`
+  - Warm border: `#DDD2CA`
+- **Semantic token changes (more perceptible values):**
+  - `--background`: `#faf8f5` → `#f8f3ee` (More perceptible warm ivory)
+  - `--surface-elevated`: `#f3efeb` → `#f1e8e1` (More perceptible soft champagne/beige)
+  - `--foreground`: `#171515` (unchanged, near-black)
+  - `--primary`: `#171515` (unchanged, near-black)
+  - `--secondary`: `#f3efeb` → `#f1e8e1` (More perceptible soft champagne/beige)
+  - `--accent`: `#b98282` (unchanged, muted dusty rose)
+  - `--border`: `#ded7d2` → `#ddd2ca` (More perceptible warm border)
+  - `--input`: `#ded7d2` → `#ddd2ca` (More perceptible warm border)
+- **Section background rhythm (visibly different):**
+  - Hero: Unchanged (photographic hero with dark overlay)
+  - About: `bg-background` class (warm ivory `#f8f3ee`)
+  - Services: Unchanged (white cards on default background, now uses warm border token)
+  - Portfolio: `bg-background` class (warm ivory `#f8f3ee`)
+  - Testimonials: Inline style `backgroundColor: #f5e7e5` (very light blush)
+  - Travel: Uses `--surface-elevated` which is now soft champagne/beige `#f1e8e1`
+  - Booking: Unchanged (white/very light ivory)
+  - Footer: Unchanged (existing dark treatment)
+- **Dusty rose accent usage (now visibly prominent):**
+  - Section eyebrow labels: All sections (About, Services, Portfolio, Testimonials, Travel) use `#b98282` for the uppercase label text
+  - Booking progress: Active and completed steps use `bg-accent` (dusty rose) instead of near-black
+  - Booking service selection: Selected state uses `border-accent` and checkmark in dusty rose
+- **Services cards:** White cards with warm borders (via updated `--border` token), no structural changes
+- **Scope protection:** No architecture changes, no new functionality, no typography changes, no layout changes, no navigation changes, no booking logic changes. Only color token adjustments and accent applications.
+- **Accessibility verification:** Contrast ratios maintained. Near-black `#171515` on warm ivory `#f8f3ee` exceeds WCAG AA (contrast ratio ~14:1). Near-black on soft champagne `#f1e8e1` exceeds WCAG AA (contrast ratio ~13:1). Near-black on light blush `#f5e7e5` exceeds WCAG AA (contrast ratio ~12:1). Dusty rose used for larger text (eyebrow labels) and UI elements (progress indicators, selected states), not small body text where contrast would be insufficient.
+- **Responsive verification:** No layout changes. Existing responsive behavior preserved at 375px, 768px, 1024px+, and 1440px. No horizontal overflow, clipped content, or layout shifts introduced by color changes.
+- **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.

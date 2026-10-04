@@ -22,16 +22,16 @@ export function BookingProgress({ currentStep, totalSteps }: BookingProgressProp
                 <div
                   className={`h-2 flex-1 rounded-full transition-colors ${
                     isCompleted
-                      ? "bg-foreground"
+                      ? "bg-accent"
                       : isCurrent
-                      ? "bg-foreground"
+                      ? "bg-accent"
                       : "bg-border"
                   }`}
                 />
                 {stepNumber < totalSteps && (
                   <div
                     className={`h-2 w-2 rounded-full ${
-                      isCompleted ? "bg-foreground" : "bg-border"
+                      isCompleted ? "bg-accent" : "bg-border"
                     }`}
                   />
                 )}

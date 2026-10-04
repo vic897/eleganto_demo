@@ -8,7 +8,7 @@ export function Travel() {
     >
       <div className="rounded-[4px] border border-border bg-surface-elevated p-6 lg:p-8">
         <div className="mb-6 space-y-2 lg:mb-8">
-          <p className="text-sm uppercase tracking-wider text-muted-foreground">
+          <p className="text-sm uppercase tracking-wider" style={{ color: '#b98282' }}>
             Travel
           </p>
           <h2 className="font-heading text-[24px] leading-[1.3] tracking-tight text-foreground lg:text-[32px]">

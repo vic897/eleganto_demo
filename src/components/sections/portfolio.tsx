@@ -4,14 +4,14 @@ const demoPortfolioImages = [
   "https://images.unsplash.com/photo-1503236823255-94609f598e71?w=600&q=80",
   "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
   "https://images.unsplash.com/photo-1595959183082-7b570b7e1dfa?w=600&q=80",
-  "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600&q=80",
+  "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
 ];
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="mx-auto w-full max-w-[1200px] px-4 py-16 lg:py-24">
+    <section id="portfolio" className="mx-auto w-full max-w-[1200px] px-4 py-16 lg:py-24 bg-background">
       <div className="mb-6 space-y-2 lg:mb-8">
-        <p className="text-sm uppercase tracking-wider text-muted-foreground">
+        <p className="text-sm uppercase tracking-wider" style={{ color: '#b98282' }}>
           Portfolio
         </p>
         <h2 className="font-heading text-[24px] leading-[1.3] tracking-tight text-foreground lg:text-[32px]">

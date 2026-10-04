@@ -40,14 +40,14 @@ export function BookingStepService({
               onClick={() => onServiceSelect(service)}
               className={`flex w-full min-h-[44px] items-center justify-between rounded-[4px] border px-4 py-3 text-left transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)] ${
                 isSelected
-                  ? "border-foreground bg-surface-elevated"
+                  ? "border-accent bg-surface-elevated"
                   : "border-border bg-surface hover:border-border-interactive"
               }`}
               aria-pressed={isSelected}
             >
               <span className="text-base text-foreground">{service}</span>
               {isSelected && (
-                <Check className="size-5 text-foreground" strokeWidth={1.5} />
+                <Check className="size-5 text-accent" strokeWidth={1.5} />
               )}
             </button>
           );

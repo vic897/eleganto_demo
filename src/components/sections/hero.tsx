@@ -18,7 +18,10 @@ export function Hero() {
             Luxury Makeup Artistry
           </h1>
           <p className="text-base leading-relaxed text-white/90 lg:text-lg">
-            Professional makeup services for your special moments. (Demo content - replace with verified business information)
+            Professional makeup services for your special moments.
+          </p>
+          <p className="text-xs text-white/60">
+            Demo preview
           </p>
           <div className="pt-2">
             <Button
