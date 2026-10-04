@@ -1,8 +1,8 @@
 # AGENT CONTEXT
 
-Active branch: task-001-init-architecture
+Active branch: task-redesign-editorial-beauty (rebased from task-001-init-architecture)
 
-Current phase: Phase 7 — Review
+Current phase: Phase 7 — Review | REDESIGN Phase
 
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
@@ -18,7 +18,7 @@ TASK-011 — Responsive + UX Polish (status: review, awaiting approval)
 TASK-012 — Adversarial Review (status: review, awaiting approval)
 
 Current task:
-DEMO-POLISH-002 — Make Warm Editorial Palette Visibly Perceptible — status: review
+REDESIGN-001 — Editorial Luxury Dark Beauty Studio Redesign — status: review
 
 Implementation status:
 DEMO-001 Client Demo Content & Asset Pass completed:
