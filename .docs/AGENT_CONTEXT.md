@@ -1,24 +1,15 @@
 # AGENT CONTEXT
 
-Active branch: task-redesign-editorial-beauty (rebased from task-001-init-architecture)
+Active branch: main
 
-Current phase: Phase 7 — Review | REDESIGN Phase
+Current phase: Phase 8 — Release & Deployment
 
 Last completed:
-TASK-001 — Project Architecture (status: review, awaiting approval)
-TASK-002 — Project Shell + Navigation (status: review, awaiting approval)
-TASK-003 — Hero + About (status: review, awaiting approval)
-TASK-004 — Services (status: review, awaiting approval)
-TASK-005 — Portfolio + Testimonials (status: review, awaiting approval)
-TASK-006 — Travel Banner + Footer CTA (status: review, awaiting approval)
-TASK-007 — Booking Flow (status: review, awaiting approval)
-TASK-009 — Artist Dashboard (status: review, awaiting approval)
-TASK-010 — Enquiry Detail + Actions (status: review, awaiting approval)
-TASK-011 — Responsive + UX Polish (status: review, awaiting approval)
-TASK-012 — Adversarial Review (status: review, awaiting approval)
+REDESIGN-001 — Editorial Luxury Dark Beauty Studio Redesign (status: done)
 
 Current task:
-REDESIGN-001 — Editorial Luxury Dark Beauty Studio Redesign — status: review
+RELEASE-001 — GitHub & Vercel Production Deployment
+
 
 Implementation status:
 DEMO-001 Client Demo Content & Asset Pass completed:

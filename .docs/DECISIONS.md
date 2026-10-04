@@ -256,3 +256,22 @@ Dashboard data and enquiry states are local/mock state.
 - **Accessibility verification:** Contrast ratios maintained. Near-black `#171515` on warm ivory `#f8f3ee` exceeds WCAG AA (contrast ratio ~14:1). Near-black on soft champagne `#f1e8e1` exceeds WCAG AA (contrast ratio ~13:1). Near-black on light blush `#f5e7e5` exceeds WCAG AA (contrast ratio ~12:1). Dusty rose used for larger text (eyebrow labels) and UI elements (progress indicators, selected states), not small body text where contrast would be insufficient.
 - **Responsive verification:** No layout changes. Existing responsive behavior preserved at 375px, 768px, 1024px+, and 1440px. No horizontal overflow, clipped content, or layout shifts introduced by color changes.
 - **Verification:** `npm run typecheck` passed. `npm run build` passed. No TypeScript errors or build issues.
+
+## Phase 8 — Visual & UX Redesign
+
+### REDESIGN-001 — Editorial Luxury Dark Beauty Studio Redesign
+- **Core Aesthetic:** Dark espresso (`#0e0c0d`) background, deep wine burgundy (`#6e1a2d`), muted dusty rose (`#c88f8f`), warm champagne (`#d7be9f`), and warm ivory (`#fbf8f5`) typography palette.
+- **Display Typography:** Playfair Display with regular and italic weights for high-fashion editorial feel; Inter for clean, legible UI and body.
+- **Section Layouts:**
+  - Full-width hero with layered gradients, editorial headlines, and trust statistics.
+  - Split editorial About section with overlapping atelier imagery.
+  - Asymmetric 12-column services grid featuring photography overlays and hover micro-interactions.
+  - Dedicated 3-pillar "Why Eleganto" section.
+  - Masonry portfolio gallery with accessible modal lightbox and keyboard controls.
+  - Minimal pull-quote testimonials without star rating clutter.
+  - Deep burgundy full-width booking callout leading to an inline luxury reservation container.
+  - Editorial 4-column atelier footer with directory navigation.
+- **Architecture & Business Logic:**
+  - Unbroken 5-step booking state machine (Service → Date/Location → Contact → Review → Confirmation/WhatsApp).
+  - Preserved reservation dashboard with status management.
+  - Clean Next.js 16 App Router build with zero errors.

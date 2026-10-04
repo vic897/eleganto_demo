@@ -168,3 +168,19 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
   - End-to-end demo checklist passes: public site → booking enquiry → confirmation/WhatsApp → artist dashboard actions on 375px.
   - PROJECT_SPEC §9 Definition of Done criteria are explicitly marked pass/fail in review notes.
   - `npm run build` and type checking pass on the reviewed branch.
+
+## Phase 8 — Visual & UX Redesign
+
+- [x] REDESIGN-001 | L | depends: TASK-012 | status: done
+  Title: Editorial Luxury Dark Beauty Studio Redesign
+
+  Acceptance:
+  - Dark espresso, deep wine burgundy, dusty rose, champagne, and ivory palette.
+  - Cinematic hero with layered gradients and trust statistics.
+  - Asymmetric 12-column services grid with hover interactions.
+  - Why Eleganto 3-pillar brand story section.
+  - Masonry portfolio gallery with accessible modal lightbox.
+  - Minimal pull-quote testimonials without star ratings.
+  - Luxury reservation booking container with intact state machine.
+  - Full mobile responsiveness at 375px+ and clean Next.js build.
+
