@@ -2,19 +2,14 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef } from "react";
-import { X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { X, Sparkles } from "lucide-react";
 import { BOOK_NOW_LINK, NAV_LINKS } from "@/lib/nav-links";
-import { cn } from "@/lib/utils";
 
 type MobileNavProps = {
   menuId: string;
   onClose: () => void;
   triggerRef: React.RefObject<HTMLButtonElement | null>;
 };
-
-const navLinkClassName =
-  "flex min-h-11 items-center rounded-[4px] px-3 text-base text-foreground outline-none transition-colors hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]";
 
 export function MobileNav({ menuId, onClose, triggerRef }: MobileNavProps) {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -74,13 +69,11 @@ export function MobileNav({ menuId, onClose, triggerRef }: MobileNavProps) {
         const lastElement = focusableElements[focusableElements.length - 1];
 
         if (event.shiftKey) {
-          // Shift+Tab: if on first element, move to last
           if (document.activeElement === firstElement) {
             event.preventDefault();
             lastElement.focus();
           }
         } else {
-          // Tab: if on last element, move to first
           if (document.activeElement === lastElement) {
             event.preventDefault();
             firstElement.focus();
@@ -104,48 +97,62 @@ export function MobileNav({ menuId, onClose, triggerRef }: MobileNavProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Site navigation"
-      className="fixed inset-0 z-50 flex flex-col bg-background lg:hidden"
+      className="fixed inset-0 z-50 flex flex-col bg-[#0e0c0d] text-[#fbf8f5] lg:hidden"
     >
-      <div className="flex h-14 shrink-0 items-center justify-end border-b border-border px-4">
+      <div className="flex h-16 shrink-0 items-center justify-between border-b border-white/10 px-6">
+        <div className="flex flex-col">
+          <span className="font-heading text-lg tracking-[0.25em] text-[#fbf8f5]">
+            ELEGANTO
+          </span>
+          <span className="text-[8px] tracking-[0.3em] uppercase text-[#c88f8f]">
+            Haute Beauty Atelier
+          </span>
+        </div>
         <button
           ref={closeButtonRef}
           type="button"
           onClick={handleClose}
-          className="inline-flex size-11 min-h-11 min-w-11 items-center justify-center rounded-[4px] text-foreground outline-none transition-colors hover:bg-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus-ring)]"
+          className="inline-flex size-11 min-h-11 min-w-11 items-center justify-center rounded-[2px] text-[#fbf8f5] outline-none transition-colors hover:bg-white/10 hover:text-[#c88f8f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d7be9f]"
           aria-label="Close menu"
         >
           <X className="size-6" strokeWidth={1.5} aria-hidden />
         </button>
       </div>
 
-      <nav className="flex flex-1 flex-col overflow-y-auto px-4 py-6" aria-label="Primary">
-        <ul className="flex flex-col gap-1">
-          {NAV_LINKS.map((item) => (
+      <nav className="flex flex-1 flex-col justify-between overflow-y-auto px-6 py-8" aria-label="Primary">
+        <ul className="flex flex-col space-y-4">
+          {NAV_LINKS.map((item, idx) => (
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={navLinkClassName}
+                className="group flex min-h-11 items-center justify-between border-b border-white/[0.06] pb-3 text-lg font-heading tracking-[0.05em] text-[#fbf8f5] outline-none transition-colors hover:text-[#c88f8f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#d7be9f]"
                 onClick={handleClose}
               >
-                {item.label}
+                <span>{item.label}</span>
+                <span className="text-xs font-sans text-white/30 tracking-widest group-hover:text-[#c88f8f]">
+                  0{idx + 1}
+                </span>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="mt-8 border-t border-border pt-6">
-          <Button
-            nativeButton={false}
-            render={
-              <Link
-                href={BOOK_NOW_LINK.href}
-                className="w-full uppercase tracking-wider"
-                onClick={handleClose}
-              />
-            }
+        <div className="mt-8 space-y-6 pt-6 border-t border-white/10">
+          <Link
+            href={BOOK_NOW_LINK.href}
+            className="flex min-h-12 w-full items-center justify-center rounded-[2px] border border-[#d7be9f]/40 bg-[#6e1a2d] px-6 text-xs uppercase tracking-[0.25em] font-medium text-[#fbf8f5] shadow-lg transition-all hover:bg-[#89273c]"
+            onClick={handleClose}
           >
             {BOOK_NOW_LINK.label}
-          </Button>
+          </Link>
+
+          <div className="flex items-center justify-between text-xs text-[#a89a95]">
+            <span>Metropolitan Atelier & Travel</span>
+            <span className="flex items-center gap-1 text-[#c88f8f]">
+              <Sparkles className="size-3" />
+              By Appointment Only
+            </span>
+          </div>
         </div>
       </nav>
     </div>

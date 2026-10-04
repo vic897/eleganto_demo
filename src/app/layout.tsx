@@ -7,18 +7,21 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Elegentoo Artistry",
+  title: "Eleganto Artistry | Haute Beauty & Salon Atelier",
   description:
-    "Luxury makeup artistry — booking enquiry demo (content placeholders).",
+    "Bespoke makeup artistry, hair sculpting, manicure, and luxury cosmetology services tailored to your unique elegance.",
 };
 
 export default function RootLayout({
@@ -27,8 +30,8 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full`}>
-      <body className="flex min-h-full flex-col">
+    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full dark`}>
+      <body className="flex min-h-full flex-col bg-background text-foreground selection:bg-[#6e1a2d] selection:text-[#fbf8f5]">
         <AppShell>{children}</AppShell>
       </body>
     </html>

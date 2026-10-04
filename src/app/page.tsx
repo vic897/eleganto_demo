@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Services } from "@/components/sections/services";
+import { WhyEleganto } from "@/components/sections/why-eleganto";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Travel } from "@/components/sections/travel";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <About />
       <Services />
+      <WhyEleganto />
       <Portfolio />
       <Testimonials />
       <Travel />
