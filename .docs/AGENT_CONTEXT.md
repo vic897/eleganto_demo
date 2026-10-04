@@ -2,7 +2,7 @@
 
 Active branch: task-001-init-architecture
 
-Current phase: Phase 6 — Polish
+Current phase: Phase 7 — Review
 
 Last completed:
 TASK-001 — Project Architecture (status: review, awaiting approval)
@@ -14,41 +14,37 @@ TASK-006 — Travel Banner + Footer CTA (status: review, awaiting approval)
 TASK-007 — Booking Flow (status: review, awaiting approval)
 TASK-009 — Artist Dashboard (status: review, awaiting approval)
 TASK-010 — Enquiry Detail + Actions (status: review, awaiting approval)
+TASK-011 — Responsive + UX Polish (status: review, awaiting approval)
 
 Current task:
-TASK-011 — Responsive + UX Polish — status: review
+TASK-012 — Adversarial Review — status: review
 
 Implementation status:
-TASK-011 Responsive + UX Polish implemented:
-- Skeleton loading component created at src/components/ui/skeleton.tsx with animate-pulse class using --surface-elevated background
-- Reduced-motion support: animate-pulse animation wrapped in @media (prefers-reduced-motion: no-preference) per DESIGN_SYSTEM.md §12
-- Empty states verified: Dashboard has Inbox icon with "No enquiries yet" text when enquiries array is empty
-- Error states verified: Booking form has inline validation errors with AlertCircle icon, --destructive text, and aria-describedby linkage for all required fields
-- Responsive layouts verified: All sections usable at 375px, 768px, and 1024px+ breakpoints per DESIGN_SYSTEM.md §6 and §14
-- Loading states: Skeleton component available for future use; current implementation uses immediate render (acceptable for demo scope)
-- No blocking global spinners used; skeleton pattern follows design system §15
-- Motion respects user preferences via @media (prefers-reduced-motion: no-preference)
-- No new functionality added - polish only
-- No content changes - placeholder strategy maintained
+TASK-012 Adversarial Review completed:
+- Independent adversarial audit covering code/architecture, UX/accessibility, business-content integrity, out-of-scope verification, end-to-end 375px demo, responsive verification, and PROJECT_SPEC §9 Definition of Done
+- Overall verdict: PASS - No blockers found
+- Findings: No critical, high, or medium findings. One informational finding regarding booking-progress aria-live announcement (redundant step announcements) - explicitly accepted as-is for demo scope
+- UX/accessibility review: Passed against DESIGN_SYSTEM.md §13. Verified keyboard accessibility, visible focus states, form labels, aria relationships, aria-invalid usage, error messaging, semantic HTML, heading hierarchy, button/link semantics, 44px minimum touch targets, contrast/token usage, mobile usability, focus behavior in navigation, mobile navigation Escape behavior, booking progress/navigation, booking validation, confirmation screen, dashboard interaction states, and readable status indicators
+- Business-content integrity: Passed. Verified no invented business information presented as factual. All business content is clearly marked as placeholder or uses obviously safe demo values
+- Out-of-scope verification: Passed. No database integration, ORM persistence, authentication, real payments, automated email, automated SMS, or calendar synchronization found
+- End-to-end 375px demo: Passed. Client journey (public site → booking → confirmation → WhatsApp) completable. Artist journey (dashboard → detail → actions) completable
+- Responsive verification: Passed at 375px, 768px, and 1024px+. No horizontal overflow, clipped controls, or layout issues
+- PROJECT_SPEC §9 Definition of Done: All criteria passed
+- No implementation blockers remain
 
-Files changed during TASK-011:
-- src/components/ui/skeleton.tsx (new skeleton component)
-- src/app/globals.css (added pulse animation with reduced-motion support)
+Files changed during TASK-012:
+- .docs/TASKS.md (TASK-012 status changed to review)
+- .docs/DECISIONS.md (added TASK-012 decision note)
 - .docs/AGENT_CONTEXT.md
-- .docs/TASKS.md
-- .docs/DECISIONS.md
 
-Verification (TASK-011):
+Verification (TASK-012):
 - `npm run typecheck` — pass
 - `npm run build` — pass
-- Responsive behavior verified at 375px, 768px, 1024px+
-- Empty states present (dashboard)
-- Error states present (booking form)
-- Reduced-motion support added
-- Skeleton component available for loading states
+- Independent adversarial audit passed
+- No source code changes required
 
 Blockers:
 None
 
 Next step:
-Reviewer approval of TASK-011, then TASK-012 (Adversarial Review). Do not start TASK-012 until TASK-011 is approved.
+Reviewer/product-owner approval of TASK-012.

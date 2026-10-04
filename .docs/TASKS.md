@@ -157,7 +157,7 @@ Authoritative task list for Elegentoo Artistry Demo V1. Each task includes testa
 
 ## Phase 7 — Review
 
-- [ ] TASK-012 | S | depends: TASK-011 | status: todo
+- [ ] TASK-012 | S | depends: TASK-011 | status: review
   Title: Adversarial Review
 
   Acceptance:

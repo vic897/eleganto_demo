@@ -150,3 +150,15 @@ Dashboard data and enquiry states are local/mock state.
 - **No new functionality:** TASK-011 is polish only - no new features, no content changes, no scope expansion.
 - **Content integrity:** No placeholder content replaced with invented business information. Placeholder strategy maintained.
 - **Verification:** `npm run typecheck` and `npm run build` pass. No TASK-012+ functionality added.
+
+### TASK-012 — Adversarial Review (Phase 7)
+- **Independent adversarial audit completed:** Comprehensive audit covering code/architecture, UX/accessibility, business-content integrity, out-of-scope verification, end-to-end 375px demo, responsive verification, and PROJECT_SPEC §9 Definition of Done.
+- **Overall verdict:** PASS - No blockers found.
+- **Findings:** No critical, high, or medium findings. One informational finding regarding booking-progress aria-live announcement (redundant step announcements) - explicitly accepted as-is for demo scope.
+- **UX/accessibility review:** Passed against DESIGN_SYSTEM.md §13. Verified keyboard accessibility, visible focus states, form labels, aria relationships, aria-invalid usage, error messaging, semantic HTML, heading hierarchy, button/link semantics, 44px minimum touch targets, contrast/token usage, mobile usability, focus behavior in navigation, mobile navigation Escape behavior, booking progress/navigation, booking validation, confirmation screen, dashboard interaction states, and readable status indicators.
+- **Business-content integrity:** Passed. Verified no invented business information presented as factual. Service names, prices, artist biography, qualifications, testimonials, portfolio descriptions, travel policies, phone numbers, email addresses, social accounts, locations, and availability claims are all clearly marked as placeholders or use obviously safe demo values.
+- **Out-of-scope verification:** Passed. No database integration, ORM persistence, authentication, real payments, automated email, automated SMS, or calendar synchronization found. No API routes, localStorage/sessionStorage, or external persistence.
+- **End-to-end 375px demo:** Passed. Client journey (public site → booking → confirmation → WhatsApp) completable. Artist journey (dashboard → detail → actions) completable. No broken transitions, unclear states, clipped controls, or misleading confirmations.
+- **Responsive verification:** Passed at 375px, 768px, and 1024px+. No horizontal overflow, clipped controls, awkward wrapping, inaccessible buttons, overlapping fixed elements, unsafe-area problems, or excessively cramped layouts.
+- **PROJECT_SPEC §9 Definition of Done:** All criteria passed. Complete flow completable on 375px, empty/loading/responsive states not broken, independent code and UX review passed.
+- **Verification:** `npm run typecheck` passed with no TypeScript errors. `npm run build` completed successfully with static pages generated for /, /_not-found, /dashboard.
